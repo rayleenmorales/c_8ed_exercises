@@ -1,0 +1,6 @@
+// NOTES:
+// to append file use: dout.open(filename.c_str(), ios::app)
+// to create a new file use: dout.open(filename.c_str())
+// to get data from file use: din.open(filename.c_str())
+// use for error handling when file doesn't exist: din.fail()
+// dont forget to always close din and dout: din.close() & dout.close()
