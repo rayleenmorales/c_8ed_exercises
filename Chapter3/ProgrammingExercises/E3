@@ -1,0 +1,19 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	double weight;
+	
+	cout<<"Enter your weight (kg): ";
+	cin>>weight;
+	
+	weight = weight / 2.2;
+	
+	cout<<fixed<<showpoint<<setprecision(2);
+	
+	cout<<"Your weight in pounds is "<<weight<<" lbs."<<endl;
+	
+	return 0;
+}
