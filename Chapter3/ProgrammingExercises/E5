@@ -1,0 +1,34 @@
+/*
+In Ch3_Ex5Data.txt:
+Miller Andrew 65789.87 5
+Green Sheila 75892.56 6
+Sethi Amit 74900.50 6.1
+*/
+
+#include<iostream>
+#include<fstream>
+#include<iomanip>
+#include<string>
+using namespace std;
+
+int main()
+{
+	string fName, lName;
+	double cSal, pInc;
+	ifstream din;
+	ofstream dout;
+	
+	din.open("Ch3_Ex5Data.txt");
+	dout.open("Ch3_Ex5Output.dat");
+	
+	dout<<fixed<<showpoint<<setprecision(2);
+	
+	while(din>>fName>>lName>>cSal>>pInc){
+		dout<<fName<<" "<<lName<<" "<<cSal + (cSal*(pInc/100))<<endl;
+	}
+	
+	dout.close();
+	din.close();
+	
+	return 0;
+}
