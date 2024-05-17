@@ -1,0 +1,62 @@
+// Programming Example 1: Movie Tickets Sale and Donation to Charity
+#include<iostream>
+#include<iomanip>
+#include<string>
+using namespace std;
+
+int main()
+{
+	//declarables
+	string name;
+	int tSold, aSold, cSold; 
+	double aPrice, cPrice;
+	double gross, percent, donate, netSale;
+	
+	//executables
+	cout<<"Movie Tickets Sale and Donation to Charity"<<endl
+		<<endl;
+	
+	cout<<"Movie Name: ";
+	getline(cin, name);
+	
+	cout<<"Adult Ticket Price: ";
+	cin>>aPrice;
+	
+	cout<<"Child Ticket Price: ";
+	cin>>cPrice;
+	
+	cout<<"Number of Adult Tickets Sold: ";
+	cin>>aSold;
+	
+	cout<<"Number of Child Tickets Sold: ";
+	cin>>cSold;
+	
+	cout<<"Percentage to be Donated from Gross Sales: ";
+	cin>>percent;
+	
+	cout<<endl;
+	
+	tSold = aSold + cSold;
+	gross = (aSold * aPrice) + (cSold * cPrice);
+	donate = gross * (percent/100);
+	netSale = gross - donate;
+
+	//output	
+	cout<<fixed<<showpoint;
+	
+	cout<<"-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*"<<endl;
+	cout<<setfill('.')<<left<<setw(35)<<"Movie Name: "<<" "<<right<<name<<endl
+		<<setfill('.')<<left<<setw(35)<<"Number of Tickets Sold: "<<" "
+		<<setfill(' ')<<right<<setw(10)<<tSold<<endl
+		<<setfill('.')<<left<<setw(35)<<"Gross Amount: "<<" "
+		<<setfill(' ')<<right<<"$"<<setw(9)<<setprecision(2)<<gross<<endl
+		<<setfill('.')<<left<<setw(35)<<"Percentage of Gross Amount Donated:"<<" "
+		<<setfill(' ')<<right<<setw(10)<<setprecision(2)<<percent<<"%"<<endl
+		<<setfill('.')<<left<<setw(35)<<"Amount Donated: "<<" "
+		<<setfill(' ')<<right<<"$"<<setw(9)<<setprecision(2)<<donate<<endl
+		<<setfill('.')<<left<<setw(35)<<"Net Sale: "<<" "
+		<<setfill(' ')<<right<<"$"<<setw(9)<<setprecision(2)<<netSale<<endl;
+
+	
+	return 0;
+}
