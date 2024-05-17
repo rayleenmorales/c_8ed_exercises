@@ -1,0 +1,52 @@
+// Programming Example 2: Student Grade
+#include<iostream>
+#include<iomanip>
+#include<fstream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	//declarabes
+	string name, filename;
+	double total, average;
+	double scores[5];
+	ofstream dout;
+	
+	//executables
+	cout<<"Enter filename: ";
+	cin>>filename;
+	cin.ignore();
+	
+	filename += ".txt";
+	
+	system("cls");
+	
+	cout<<"Enter Student Name: ";
+	getline(cin, name);
+	
+	total = 0;
+	
+	for(int i=0; i<5; i++){
+		cout<<"Enter Test Score ["<<i+1<<"]: ";
+		cin>>scores[i];
+		total += scores[i];
+	}
+	
+	average = total/5;
+	
+	//output
+	dout.open(filename.c_str());
+	
+	dout<<"Student Name:"<<name<<endl;
+	
+	for(int j=0; j<5; j++){
+		dout<<"Test Score ["<<j+1<<"]: "<<scores[j]<<endl;
+	}
+	
+	dout<<"Average: "<<average<<endl;
+	
+	dout.close();
+	
+	return 0;
+}
