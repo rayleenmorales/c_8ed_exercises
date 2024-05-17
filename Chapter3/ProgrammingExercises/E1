@@ -1,0 +1,44 @@
+#include<iostream>
+#include<fstream>
+#include<iomanip>
+#include<string>
+using namespace std;
+
+int main()
+{
+	//declarables
+	ifstream inFile;
+	ofstream outFile;
+	string fName, lName, department;
+	double gSalary, bonus, taxes, distance, dTime, cPrice, nSalary, speed, tSales, bonusAmt;
+	int cSold;
+	
+	//executables
+	inFile.open("inData.txt");
+	outFile.open("outData.txt");
+	
+	inFile>>fName>>lName>>department>>gSalary>>bonus>>taxes>>distance>>dTime>>cSold>>cPrice;
+	
+	bonusAmt = gSalary * (bonus/100);
+	nSalary = gSalary + bonusAmt - ((gSalary + bonusAmt) * (taxes/100));
+	speed = distance / dTime;
+	tSales = cSold * cPrice;
+	
+	//output
+	outFile<<fixed<<setprecision(2);
+	
+	outFile<<"Name: "<<fName<<" "<<lName<<", Department: "<<department<<endl
+		   <<"Monthly Gross Salary: $"<<gSalary<<", Monthly Bonus: "<<bonus<<"%, Taxes: "<<taxes<<"%"<<endl
+		   <<"Paycheck: $"<<nSalary<<endl
+		   <<endl
+		   <<"Distance Traveled: "<<distance<<" miles, Travelling Time: "<<dTime<<" hours"<<endl
+		   <<"Average Speed: "<<speed<<" miles per hour"<<endl
+		   <<endl
+		   <<"Number of Coffee Cups Sold: "<<cSold<<", Cost: $"<<cPrice<<" per cup"<<endl
+		   <<"Sales Amount = $"<<tSales<<endl;
+	
+	outFile.close();
+	inFile.close();
+	
+	return 0;
+}
