@@ -1,0 +1,38 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	double netBalance, payment, iRate, interest, aveBalance;
+	int d1, d2;
+	
+	cout<<"Enter the Balance Shown in the Bill: ";
+	cin>>netBalance;
+	cout<<endl;
+	
+	cout<<"Enter the Payment Made: ";
+	cin>>payment;
+	cout<<endl;
+	
+	cout<<"Enter the Number of Days in the Billing Cycle: ";
+	cin>>d1;
+	cout<<endl;
+	
+	cout<<"Enter the Number of Days Payment is Made Before Billing Cycle: ";
+	cin>>d2;
+	cout<<endl;
+	
+	cout<<"Enter the Interest Rate per Month: ";
+	cin>>iRate;
+	cout<<endl;
+	
+	aveBalance = (netBalance * d1 - payment * d2) / d1;
+	interest = aveBalance * iRate;
+	
+	cout<<fixed<<showpoint<<setprecision(2);
+	
+	cout<<"The Interest is "<<interest<<"."<<endl;
+	
+	return 0;
+}
