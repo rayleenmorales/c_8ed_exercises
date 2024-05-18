@@ -1,0 +1,36 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	//declarables
+	double cMerch, tSal, yRent, eCost;
+	double markupPrice, totalExpenses, markupPercent;
+	
+	//executables
+	cout<<"Enter the Total Cost of the Merchandise: ";
+	cin>>cMerch;
+	
+	cout<<"Enter the Total Salary of the Employees: ";
+	cin>>tSal;
+	
+	cout<<"Enter the Yearly Rent: ";
+	cin>>yRent;
+	
+	cout<<"Enter the Estimated Electricity Cost per Year: ";
+	cin>>eCost;
+	
+	totalExpenses = cMerch + tSal + yRent + eCost;
+	markupPrice = ((0.1 * cMerch) + totalExpenses) * 0.85;
+	markupPercent = (markupPrice * 100) / cMerch;
+	
+	//output
+	cout<<fixed<<showpoint<<setprecision(2)
+		<<endl;
+	
+	cout<<"The merchandise should be markup up at "<<markupPercent<<"% or by "
+		<<markupPrice<<" to get the desired profit.";
+	
+	return 0;
+}
