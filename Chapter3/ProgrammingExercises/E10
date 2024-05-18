@@ -1,0 +1,28 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	double length, radius, space, sOccupied;
+	int trees;
+	
+	cout<<"Enter the Length of the Yard: ";
+	cin>>length;
+	
+	cout<<"Enter the Radius of a Fully Grown Tree: ";
+	cin>>radius;
+	
+	cout<<"Enter the Required Space Between Fully Grown Trees: ";
+	cin>>space;
+	
+	cout<<endl;
+	
+	trees = static_cast<int>(length / (radius * 2 + space));
+	sOccupied = radius * 2 * trees;
+	
+	cout<<"The number of trees that can be planted in the yard is "<<trees<<endl
+		<<"The total space that will be occupied by the fully grown trees are "<<sOccupied<<endl;
+	
+	return 0; 
+}
