@@ -1,0 +1,33 @@
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	const double pi = 3.14159;
+	double rCylinder, hCylinder, sCube;
+	double volume;
+	
+	cout<<"Enter the Radius of the Base of the Cylindrical Container: ";
+	cin>>rCylinder;
+	
+	cout<<"Enter the Height of the Cylindrical Container: ";
+	cin>>hCylinder;
+	
+	volume = pi * (rCylinder*rCylinder) * hCylinder;
+	
+	cout<<endl;
+	
+	cout<<fixed<<showpoint<<setprecision(2);
+	
+	cout<<"The volume of the container is "<<volume<<"."<<endl;
+	
+	sCube = cbrt(volume);
+	
+	cout<<endl
+		<<"The side of a cube with the same volume as the cylindrical container is "
+		<<sCube<<"."<<endl;
+	
+	return 0; 
+}
